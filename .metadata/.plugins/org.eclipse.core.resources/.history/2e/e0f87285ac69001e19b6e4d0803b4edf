@@ -1,0 +1,21 @@
+package com.example.requestvalidation.model;
+
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotNull;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor(staticName = "build")
+@NoArgsConstructor
+public class UserRequest {
+	@NotNull(message = "name should not be null")
+	private String name;
+	@Email
+	private String email;
+	private String gender;
+	private String mobile;
+	private int age;
+	private String nationality;
+}

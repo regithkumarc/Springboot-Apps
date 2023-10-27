@@ -1,0 +1,5 @@
+package com.example.hibernatemapping.repository;
+
+public class ProjectRepositoryManyToMany {
+
+}

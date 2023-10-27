@@ -1,0 +1,5 @@
+package com.example.hibernatemapping.controller;
+
+public class ProjectControllerManyToMany {
+
+}

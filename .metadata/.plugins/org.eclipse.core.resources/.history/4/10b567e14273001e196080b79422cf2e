@@ -1,0 +1,7 @@
+package com.example.hibernatemapping.service;
+
+import com.example.hibernatemapping.entity.ProjectManyToMany;
+
+public interface ProjectServiceManyToMany {
+	ProjectManyToMany addProject(ProjectManyToMany projectManyToMany);
+}

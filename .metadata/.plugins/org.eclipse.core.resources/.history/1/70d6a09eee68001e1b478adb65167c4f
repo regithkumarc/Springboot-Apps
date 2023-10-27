@@ -1,0 +1,5 @@
+package com.example.requestvalidation.model;
+
+public class User {
+
+}

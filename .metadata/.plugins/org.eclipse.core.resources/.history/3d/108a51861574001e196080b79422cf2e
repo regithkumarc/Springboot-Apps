@@ -1,0 +1,90 @@
+spring:
+  application:
+    name: CLOUD-GATEWAY
+  cloud:
+    gateway:
+      routes:
+        - id: order-service
+          uri: lb://ORDER-SERVICE
+          predicates:
+            - Path=/order/**
+            - Method=GET,POST,PUT,DELETE
+          filters:
+            - name: CircuitBreaker
+              args:
+                name: order-service
+                fallbackuri: forward:/fallback/orderFallBack 
+        - id: payment-service
+          uri: lb://PAYMENT-SERVICE
+          predicates:
+            - Path=/payment/**
+            - Method=GET,POST,PUT,DELETE   
+          filters:
+            - name: CircuitBreaker
+              args:
+                name: payment-service
+                fallbackuri: forward:/fallback/paymentFallBack
+                    
+  main:
+    web-application-type: reactive
+    
+server:
+  port: 8989
+  
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    hostname: localhost
+    
+logging.level.io.github.resilience4j: DEBUG
+
+resilience4j.circuitbreaker:
+  configs:
+    default:
+      slidingWindowSize: 10
+      minimumNumberOfCalls: 5
+      permittedNumberOfCallsInHalfOpenState: 3
+      automaticTransitionFromOpenToHalfOpenEnabled: true
+      waitDurationInOpenState: 2s
+      failureRateThreshold: 5
+      eventConsumerBufferSize: 10
+      slowCallDurationThreshold: 200ms
+      slowCallRateThreshold: 30
+      recordExceptions:
+        - org.springframework.web.client.HttpServerErrorException
+        - java.io.IOException
+      ignoreExceptions:
+        - java.lang.IllegalStateException
+    shared:
+      slidingWindowSize: 100
+      permittedNumberOfCallsInHalfOpenState: 30
+      waitDurationInOpenState: 1s
+      failureRateThreshold: 50
+      eventConsumerBufferSize: 10
+      ignoreExceptions:
+        - java.lang.IllegalStateException
+  instances:
+    backendA:
+      baseConfig: default
+    backendB:
+      slidingWindowSize: 10
+      minimumNumberOfCalls: 10
+      permittedNumberOfCallsInHalfOpenState: 3
+      waitDurationInOpenState: 1s
+      failureRateThreshold: 50
+      eventConsumerBufferSize: 10
+      recordFailurePredicate: io.github.romeh.services.gateway.HttpInternalServicePredicate
+
+resilience4j.timelimiter:
+  time-limiter-aspect-order: 398
+  configs:
+    default:
+      timeoutDuration: 1s
+      cancelRunningFuture: false
+  instances:
+    backendB:
+      timeoutDuration: 250ms

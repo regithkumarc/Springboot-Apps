@@ -1,0 +1,10 @@
+package com.example.paymentservice.entity;
+
+import com.example.paymentservice.entity.Payment;
+
+public class TransactionRequest {
+	
+	private Order order;
+	private Payment payment;
+
+}

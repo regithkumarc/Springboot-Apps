@@ -1,0 +1,30 @@
+package com.example.crud.repository;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
+
+import com.example.crud.model.Product;
+
+@Repository
+public interface ProductRepository extends JpaRepository<Product, Long>{
+
+	List<Product> findByLastUpdate(String date);
+	
+	
+//	@Query(value = "select * from product where name= :name if(price!=null) : and price = :price else  skip",nativeQuery = true)
+//	//@Query(value = "select * from product where name = :name AND (?1 IS NULL OR price = :price))",nativeQuery = true)
+//	List<Product> findByNameAndPrice(@RequestParam String name,@RequestParam String price);
+	
+//	@Query(value = "select * from product where name= :name and price = :price",nativeQuery = true)
+//	//@Query(value = "select * from product where name = :name AND (?1 IS NULL OR price = :price))",nativeQuery = true)
+//	List<Product> findByNameAndPrice(@RequestParam String name,@RequestParam String price);
+	
+	//@Query(value = "?1",nativeQuery = true)
+	//@Query(value = ,nativeQuery = true)u
+	@Query(value = "select * from product where name= :name and price = :price",nativeQuery = true)
+	List<Product> findByNameAndPrice();
+
+}

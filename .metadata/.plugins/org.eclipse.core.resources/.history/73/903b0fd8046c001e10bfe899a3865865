@@ -1,0 +1,9 @@
+package com.example.orderservice.entity;
+
+
+public class TransactionRequest {
+	
+	private Order order;
+	private Payment payment;
+
+}

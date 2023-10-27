@@ -1,0 +1,5 @@
+package com.example.requestvalidation.exception;
+
+public class CustomUserException {
+
+}

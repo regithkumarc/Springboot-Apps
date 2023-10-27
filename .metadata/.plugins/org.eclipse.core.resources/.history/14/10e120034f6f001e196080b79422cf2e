@@ -1,0 +1,5 @@
+package com.example.hibernatemapping.service.OneToOne;
+
+public class EmployeeService {
+
+}

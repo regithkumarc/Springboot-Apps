@@ -1,0 +1,15 @@
+package com.example.hibernatemapping.service.OneToOne;
+
+import java.util.List;
+
+import com.example.hibernatemapping.entity.EmployeeOneToMany;
+import com.example.hibernatemapping.entity.OneToOne.Employee;
+
+public interface EmployeeServiceOneToMany {
+	
+	List<EmployeeOneToMany> findAll();
+	EmployeeOneToMany saveEmployee(EmployeeOneToMany employeeOneToMany);
+	List<EmployeeOneToMany> findByName(String name);
+	String deleteEmployeeById(Integer id);
+
+}

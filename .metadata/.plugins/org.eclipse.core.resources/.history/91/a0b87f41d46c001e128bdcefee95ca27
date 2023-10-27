@@ -1,0 +1,51 @@
+package com.example.java8;
+
+import java.sql.Date;
+
+public class ProductInfo {
+	
+	private int id;
+	private String name;
+	private String date;
+	private Date dates;
+	
+	public ProductInfo(int id, String name, String date,Date dates) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.date = date;
+		this.dates = dates;
+	}
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getDate() {
+		return date;
+	}
+	public void setDate(String date) {
+		this.date = date;
+	}
+
+	public long getDates() {
+		return dates.getTime();
+	}
+
+	public void setDates(Date dates) {
+		this.dates = dates;
+	}
+
+	@Override
+	public String toString() {
+		return "id=" + id + ", name=" + name + ", date=" + date;
+	}
+}

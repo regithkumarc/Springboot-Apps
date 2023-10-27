@@ -1,0 +1,38 @@
+package com.example.java8;
+
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
+
+public class StreamFilterDate {
+	
+	public static List<ProductInfo> getProductInfoList() {
+		List<ProductInfo> list = Arrays.asList(
+				new ProductInfo(1, "t1", "17-10-2023"),
+				new ProductInfo(1, "t2", "12-09-2023"),
+				new ProductInfo(1, "t3", "11-11-2023"),
+				new ProductInfo(1, "t4", "10-08-2023")
+				);
+		return list;
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		List<ProductInfo> list = getProductInfoList();
+		List<ProductInfo> updatedList = list.stream().sorted().collect(Collectors.toList());
+		System.out.println(updatedList);
+		
+		List<ProductInfo> sortedList = list.stream().sorted().collect(Collectors.toList());
+		
+		System.out.println(sortedList);
+		
+		
+
+	
+		
+	}
+
+}

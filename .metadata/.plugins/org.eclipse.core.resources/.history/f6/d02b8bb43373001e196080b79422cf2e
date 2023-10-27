@@ -1,0 +1,49 @@
+package com.example.hibernatemapping.service;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.hibernatemapping.entity.AuthorManyToMany;
+import com.example.hibernatemapping.entity.BookManyToMany;
+import com.example.hibernatemapping.repository.BookRepositoryManyToMany;
+
+@Service
+public class BookServiceImplManyToMany implements BookServiceManyToMany{
+
+	@Autowired
+	BookRepositoryManyToMany employeeRepositoryManyToMany;
+	
+	@Override
+	public List<BookManyToMany> findAll() {
+		// TODO Auto-generated method stub
+		return employeeRepositoryManyToMany.findAll();
+	}
+
+	@Override
+	public BookManyToMany saveBook(BookManyToMany employeeManyToMany) {
+		// TODO Auto-generated method stub
+		return employeeRepositoryManyToMany.save(employeeManyToMany);
+	}
+
+	@Override
+	public List<BookManyToMany> findByName(String name) {
+		// TODO Auto-generated method stub
+		return employeeRepositoryManyToMany.findByName(name);
+	}
+
+	@Override
+	public String deleteEmployeeById(Integer id) {
+		// TODO Auto-generated method stub
+		Optional<BookManyToMany> optional = employeeRepositoryManyToMany.findById(id);
+		if(optional.isPresent()) {
+			employeeRepositoryManyToMany.deleteById(id);
+			return "Deleted Successfully : " + id;
+		} else {
+			return "No Data is available for this ID : " + id;
+		}
+	}
+
+}

@@ -1,0 +1,23 @@
+1698214704956	Rename field 'employeeContactOneToManies'
+1698235137294	Rename type 'EmployeeManyToMany'
+1698236695637	Rename type 'EmployeeRepositoryManyToMany'
+1698236794488	Rename type 'EmployeeControllerManyToMany'
+1698237494605	Rename type 'EmployeeServiceImplManyToMany'
+1698237513924	Rename type 'EmployeeServiceManyToMany'
+1698237640474	Rename field 'employeeRepositoryManyToMany'
+1698237708289	Rename field 'employeeServiceImplManyToMany'
+1698238890715	Rename local variable 'books'
+1698238900452	Rename local variable 'bookManyToMany'
+1698238966354	Rename local variable 'authors'
+1698239051752	Rename local variable 'bookManyToManySet'
+1698239776872	Copy compilation unit
+1698239818377	Copy compilation unit
+1698239870100	Copy compilation unit
+1698239895690	Rename field 'bookServiceImplManyToMany'
+1698239979002	Copy compilation unit
+1698240094169	Copy compilation unit
+1698240109247	Rename field 'bookRepositoryManyToMany'
+1698326483059	Copy compilation unit
+1698326507840	Copy compilation unit
+1698326531525	Copy compilation unit
+1698326658003	Rename field 'bookRepositoryManyToMany'

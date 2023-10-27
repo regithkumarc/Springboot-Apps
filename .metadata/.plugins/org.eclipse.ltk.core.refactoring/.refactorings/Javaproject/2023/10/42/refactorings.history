@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;unsortMap&apos; in &apos;com.example.java8.MapSorting.main(...)&apos; to &apos;map&apos;&#x0D;&#x0A;- Original project: &apos;Javaproject&apos;&#x0D;&#x0A;- Original element: &apos;com.example.java8.MapSorting.main(String[]).unsortMap&apos;&#x0D;&#x0A;- Renamed element: &apos;unsortMap&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename local variable &apos;unsortMap&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;com.example.java8{MapSorting.java[MapSorting~main~\[QString;@unsortMap!204!250!225!233!QMap\&lt;QString;QInteger;&gt;;!0!false" name="map" references="true" stamp="1697800262023" version="1.0"/>
+</session>
