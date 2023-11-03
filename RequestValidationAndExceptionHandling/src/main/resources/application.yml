@@ -1,4 +1,6 @@
 spring:
+  application:
+    name: REQUEST-VALIDATION-AND-EXCEPTION-HANDLING
   h2:
     console:
       enabled: true
