@@ -1,9 +1,0 @@
-package com.example.hibernatemapping.repository;
-
-import org.springframework.data.jpa.repository.JpaRepository;
-
-import com.example.hibernatemapping.entity.Employee;
-
-public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
-
-}

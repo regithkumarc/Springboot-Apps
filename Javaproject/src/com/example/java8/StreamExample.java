@@ -51,6 +51,13 @@ public class StreamExample {
 		
 		Integer intArray[] = {1,2,3,1,2,4,5};
 		List<Integer> array =  Arrays.asList(intArray);
+		
+		Integer min1 = array.stream().min((m1,m2) -> m1 > m2 ? 1: -1).get();
+		System.out.println("Min 1 : " + min1);
+		
+		Integer max1 = array.stream().max((m1,m2) -> m1 > m2 ? 1: -1).get();
+		System.out.println("Max 1 : " + max1);
+		
 		Integer secondlargestNumber = array.stream().sorted().skip(intArray.length - 2).findFirst().get();
 		System.out.println("secondlargestNumber : " + secondlargestNumber);
 		
