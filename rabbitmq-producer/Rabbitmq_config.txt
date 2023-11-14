@@ -1,0 +1,68 @@
+
+Rabbitmq Config :-
+
+URL :
+
+https://www.youtube.com/watch?v=5kxLeR_YuIk
+
+https://www.youtube.com/watch?v=OP2MjpYY5Oc
+
+
+1) Run docker in cmd
+
+docker
+
+2) check docker images
+
+docker images
+
+3) Run below comment and see the RabbitMQ Dashboard
+
+docker run -d --hostname my-rabbit --name some--rabbit -p 15672:15672 -p 5672:5672 rabbitmq:3-management
+
+C:\Users\Dell>docker run -d --hostname my-rabbit --name some--rabbit -p 15672:15672 -p 5672:5672 rabbitmq:3-management
+Unable to find image 'rabbitmq:3-management' locally
+3-management: Pulling from library/rabbitmq
+aece8493d397: Pull complete
+1c0989e214d2: Pull complete
+f9ac70aa6cf5: Pull complete
+21aa9092a7de: Pull complete
+820cf032db61: Pull complete
+869d73b16c1c: Pull complete
+afd81c8cc205: Pull complete
+b884ae0a7635: Pull complete
+d50467f9fa55: Pull complete
+a1646875c620: Pull complete
+e3257bf6ba7d: Pull complete
+43db34a8f69f: Pull complete
+Digest: sha256:a40c7b85c50e1540563620c3ce8cfb9b5066c2ea60327d0681d7eaea46886ab8
+Status: Downloaded newer image for rabbitmq:3-management
+
+4) Check the created docker images :
+
+docker ps  (OR)  docker images
+
+C:\Users\Dell>docker images
+REPOSITORY                    TAG            IMAGE ID       CREATED        SIZE
+regithcprm/docker-kubernate   latest         1ced3d926d53   2 weeks ago    575MB
+rabbitmq                      3-management   386278c68d5d   5 months ago   246MB
+
+5) Dashboard :
+
+http://localhost:15672/
+
+UserName : guest
+Password : guest
+
+6)then click Queues and Stream tab click message_queue link
+
+7) we can see the total message here
+
+8) below scroll and see Get message link
+
+9) click that Get message link and see all message here
+
+10) if consumer server is stopped then only we can see the message here once it will up here we cant see any message
+
+11) all will show in consumer application
+
