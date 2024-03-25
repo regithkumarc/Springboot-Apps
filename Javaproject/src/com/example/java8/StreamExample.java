@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -77,8 +78,22 @@ public class StreamExample {
 		List<Integer> reverseOrder = array.stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList());
 		System.out.println(reverseOrder);
 		
+		Integer intArray1[] = {1,2,3,1,2,4,5};
+		List<Integer> intList = Arrays.asList(intArray1);
+		
+		Map<Object, Long> getCount = intList.stream().collect(Collectors.groupingBy(e -> e,Collectors.counting()));
+		//System.out.println(getCount.toString());
+		System.out.println(getCount);
+		
 		List<Integer> withoutDuplicate =  array.stream().distinct().collect(Collectors.toList());
 		System.out.println(withoutDuplicate);
+		
+		//Integer intArray1[] = {1,2,3,1,2,4,5};
+		//List<Integer> intList = Arrays.asList(intArray1);
+		
+		//Map<Object, Long> getCount = intList.stream().collect(Collectors.groupingBy(e -> e,Collectors.counting()));
+		//System.out.println(getCount.toString());
+		//System.out.println();)
 	}
 
 }

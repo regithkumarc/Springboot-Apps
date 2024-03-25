@@ -1,0 +1,92 @@
+
+Splunk
+
+Login Credentials :
+
+regithit@gmail.com
+Regithcprm123@
+
+After register with creadentails and login success ful we can download the exe file
+
+https://www.splunk.com/en_us/download/splunk-enterprise.html
+
+then installation successful it should launch below port
+
+http://127.0.0.1:8000/en-US/app/launcher/home
+
+
+URL :
+
+https://youtube.com/watch?v=VO20SgiTTOU
+
+1) Need to register and login with credentails
+2) then down load and keep it local
+3) then start the splunk it should run 8000 port
+4) after open go to settings -> Data inputs -> Http Event Collector
+5) open global setting in right side 
+
+Edit Global Settings
+
+All Tokens -> Enabled 
+Default source type -> json
+Default Index -> main
+HTTP Port Number -> 8088
+add port no 8088 -> click save
+
+
+6) click new token right side
+
+Name -> splunk-service-logs
+Source name override -> http-event-logs 
+
+click next
+
+Input Settings -> Source Type -> click select button -> select log 4j
+
+Index -> New Index
+
+Index Name -> splunk_api_dev -> click save
+
+select -> created index -> splunk_api_dev -> click review button -> click submit button
+
+
+
+Name : order-service-log
+source : http-event-logs
+
+then click Next button
+
+select source type -> click New button OR click select button -> search log4j
+
+index -> previous index is showing in that list -> if we want new -> click create new index button -> order_api_dev -> click save
+
+click review button
+
+then click submit button
+
+then open go to settings -> Data inputs - >we can see the index details there
+
+
+public static String mapJsonToString(Object object) {
+
+try {
+
+return new ObjectMapper.writeValueAsString(object);
+
+} catch (JsonParsingException ex) {
+e.printStackTrace();
+}
+return null;
+}
+
+
+log4j2.spring.xml
+
+
+
+
+
+
+
+
+

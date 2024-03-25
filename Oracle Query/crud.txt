@@ -1,0 +1,72 @@
+Crud Operation :-
+
+Create :-
+
+create table user_details (
+id number(10) not null,
+name varchar2(20) not null,
+city varchar2(50) 
+)
+
+-------------------------------------------------------------------------------------------
+
+Insert :-
+
+insert into user_details (id,name,city) values(1,'regith','Nagercoil');
+insert into user_details (id,name,city) values(2,'vjith','Nagercoil');
+insert into user_details (id,name,city) values(3,'bharath','Chennai');
+
+-------------------------------------------------------------------------------------------
+
+Add :-
+
+alter table user_details
+add address varchar(20)
+
+-------------------------------------------------------------------------------------------
+
+Modify :-
+
+alter table user_details
+modify id number(10) primary key
+
+-------------------------------------------------------------------------------------------
+
+Update :- (update query is used to update the record from the table)
+
+update user_details
+set name = 'regith kumar',city = 'Chennai'
+where id = 1;
+
+-------------------------------------------------------------------------------------------
+
+Delete :- (delete query is used to delete record from the table)
+
+delete from user_details
+where id = 1;
+
+-------------------------------------------------------------------------------------------
+
+Truncate :- (remove records of a table. It doesn't remove structure)
+
+truncate table user_details
+
+-------------------------------------------------------------------------------------------
+
+Drop :-
+
+alter table user_details
+drop column address
+
+-------------------------------------------------------------------------------------------
+
+Rename :-
+
+alter table user_details
+rename column address to address_detais
+
+-------------------------------------------------------------------------------------------
+
+Select :-
+
+select  * from user_details

@@ -12,5 +12,11 @@ public class TestController {
 	public String getString() {
 		return "getting string with docker";
 	}
+	
+	@GetMapping("/getData")
+	public String getData() {
+		return "getting data";
+	}
+
 
 }

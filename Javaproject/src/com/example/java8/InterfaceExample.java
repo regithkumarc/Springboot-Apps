@@ -15,6 +15,12 @@ public class InterfaceExample implements A {
 		System.out.println("print");
 	}
 
+	@Override
+	public void display() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
 
 

@@ -1,0 +1,52 @@
+Select Query :-
+
+Create :-
+
+create table user_details1 (
+id number(10) not null,
+name varchar2(20) not null,
+city varchar2(50),
+age number(10),
+salary float(20) 
+)
+
+-------------------------------------------------------------------------------------------
+
+Insert :-
+
+insert into user_details1 (id,name,city,age,salary) values(1,'regith','Nagercoil','25',5000);
+insert into user_details1 (id,name,city,age,salary) values(2,'vjith','Nagercoil','27',10000);
+insert into user_details1 (id,name,city,age,salary) values(3,'bharath','Chennai','26',15000);
+
+-------------------------------------------------------------------------------------------
+
+Select :-
+
+Select  * 
+from user_details1
+
+Where :-
+
+select age,name
+from user_details
+where age > 20
+
+And :-
+
+select name,salary
+from user_details
+where age > 20 and salary > 10000
+
+order by :-
+
+select name,salary
+from user_details
+where age > 25
+order by asc
+
+
+
+
+
+
+

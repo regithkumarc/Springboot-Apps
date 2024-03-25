@@ -1,0 +1,63 @@
+Cassandra Config :-
+
+1) download cassandra from below path
+
+https://www.apache.org/dyn/closer.lua/cassandra/3.11.16/apache-cassandra-3.11.16-bin.tar.gz
+
+
+2) go to the path and enter cmd
+
+E:\Apps\Softwares\apache-cassandra-3.11.16-bin\apache-cassandra-3.11.16\bin
+
+
+3) run casaandra.bat
+
+E:\Apps\Softwares\apache-cassandra-3.11.16-bin\apache-cassandra-3.11.16\bin>cassandra.bat
+WARNING! Powershell script execution unavailable.
+   Please use 'powershell Set-ExecutionPolicy Unrestricted'
+   on this user-account to run cassandra with fully featured
+   functionality on this platform.
+Starting with legacy startup options
+Starting Cassandra Server
+
+4) run cqlsh
+
+E:\Apps\Softwares\apache-cassandra-3.11.16-bin\apache-cassandra-3.11.16\bin>cqlsh
+
+WARNING: console codepage must be set to cp65001 to support utf-8 encoding on Windows platforms.
+If you experience encoding problems, change your console codepage with 'chcp 65001' before starting cqlsh.
+
+Connected to Test Cluster at 127.0.0.1:9042.
+[cqlsh 5.0.1 | Cassandra 3.11.16 | CQL spec 3.4.4 | Native protocol v4]
+Use HELP for help.
+WARNING: pyreadline dependency missing.  Install to enable tab completion.
+
+5) create the key space
+
+ create keyspace myCassandra with replication={'class':'SimpleStrategy','replication_factor':1}'
+ 
+cqlsh> create keyspace mycassandra with replication={'class':'SimpleStrategy','replication_factor':1}
+   ...
+   ... ;
+cqlsh> use mycassandra
+   ... ;
+cqlsh:mycassandra>
+
+
+6) create table
+
+cqlsh:mycassandra> create table Users(
+               ... id int primary key,
+               ... name text,
+               ... address text,
+               ... age int
+               ... );
+cqlsh:mycassandra> select * from users
+               ... ;
+
+ id | address | age | name
+----+---------+-----+------
+
+(0 rows)
+cqlsh:mycassandra>
+

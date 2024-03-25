@@ -1,0 +1,39 @@
+View Creation :-
+
+Create View :-
+
+Create :-
+
+create view emp_projects as
+select u.id,u.name,u.city
+from user_details u
+inner join projects p
+on u.id = p.emp_id
+where u.name = 'regith'
+
+-------------------------------------------------------------------------------------------
+
+Replace View :-
+
+Replace :-
+
+create or replace view emp_projects as
+select u.id,u.name
+from user_details u
+inner join projects p
+on u.id = p.emp_id
+where u.id = 2
+
+-------------------------------------------------------------------------------------------
+
+Select :-
+
+select  * from emp_projects
+
+-------------------------------------------------------------------------------------------
+
+Drop :-
+
+drop view emp_projects
+
+-------------------------------------------------------------------------------------------
