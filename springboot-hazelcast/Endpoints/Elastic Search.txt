@@ -1,13 +1,3 @@
-Elastic Search :-
-
-Download from below path :-
-
-https://www.elastic.co/guide/en/elasticsearch/reference/7.17/zip-windows.html
-
-After download go to the pth and Need to run the bat file
-
-E:\Apps\Softwares\elasticsearch-7.17.19-windows-x86_64\elasticsearch-7.17.19\bin>elasticsearch.bat
-
 Request :-
 
 http://localhost:9200/
@@ -32,4 +22,3 @@ Response :-
   },
   "tagline" : "You Know, for Search"
 }
-

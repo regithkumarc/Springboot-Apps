@@ -1,0 +1,62 @@
+Elastic Search :-
+
+Download from below path :-
+
+https://www.elastic.co/guide/en/elasticsearch/reference/7.17/zip-windows.html
+
+After download go to the pth and Need to run the bat file
+
+E:\Apps\Softwares\elasticsearch-7.17.19-windows-x86_64\elasticsearch-7.17.19\bin>elasticsearch.bat
+
+-------------------------------------------------------------------------------------------------
+
+Need to add the below dependency in pom.xml
+
+<!-- Elastic Search -->
+<dependency>
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-starter-data-elasticsearch</artifactId>
+</dependency>
+
+
+-------------------------------------------------------------------------------------------------
+
+Repository need to add the code
+
+public interface ElasticSearchProductRepository extends ElasticsearchRepository<ElasticSearchProduct, Integer> {
+
+}
+
+-------------------------------------------------------------------------------------------------
+
+model class need to add the below code -> indexName should be there in lowercase 
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
+@Document(indexName = "elasticsearchproduct")
+public class ElasticSearchProduct {
+	
+	private int id;
+	
+	private String name;
+	
+	private String description;
+	
+	private int qty;
+	
+	private double price;
+
+}
+
+
+-------------------------------------------------------------------------------------------------
+
+
+Default endpoints :-
+
+http://localhost:9200/
+
+http://localhost:9200/elasticsearchproduct
+
+http://localhost:9200/elasticsearchproduct/_search
