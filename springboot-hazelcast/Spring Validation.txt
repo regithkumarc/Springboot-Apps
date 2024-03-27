@@ -1,0 +1,35 @@
+Springboot Validation :-
+
+
+@Entity
+@Table
+@AllArgsConstructor(staticName = "build")
+@NoArgsConstructor
+@Getter
+@Setter
+public class Student {
+	
+@Id
+@GeneratedValue(strategy = GenerationType.AUTO)
+@NotNull(message = "Id should not be a null value")
+private int id;
+
+@NotNull(message = "Name should not be a null value")
+private String name;
+
+@NotNull(message = "Dept should not be a null value")
+private String dept;
+
+@Min(18)
+@Max(50)
+private int age;
+
+@Pattern(regexp = "^\\d{10}$", message = "invalid mobile number entered" )
+private String mobileNumber;
+
+@NotNull(message = "Gender should not be a null value")
+private String gender;
+
+@NotBlank
+private String nationality;
+}

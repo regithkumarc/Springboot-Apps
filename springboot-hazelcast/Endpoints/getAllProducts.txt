@@ -1,0 +1,52 @@
+
+Request :-
+
+http://localhost:8091/api/elasticSearch/ElasticSearchProductController/getAllProducts
+
+
+Response :-
+
+
+{
+	"content": [
+		{
+			"id": 1,
+			"name": "Laptop",
+			"description": "Good Laptop",
+			"qty": 2,
+			"price": 3000.0
+		},
+		{
+			"id": 2,
+			"name": "Mobile",
+			"description": "Good Mobile",
+			"qty": 2,
+			"price": 2000.0
+		}
+	],
+	"pageable": {
+		"pageNumber": 0,
+		"pageSize": 2,
+		"sort": {
+			"empty": true,
+			"sorted": false,
+			"unsorted": true
+		},
+		"offset": 0,
+		"paged": true,
+		"unpaged": false
+	},
+	"last": true,
+	"totalPages": 1,
+	"totalElements": 2,
+	"size": 2,
+	"number": 0,
+	"sort": {
+		"empty": true,
+		"sorted": false,
+		"unsorted": true
+	},
+	"first": true,
+	"numberOfElements": 2,
+	"empty": false
+}

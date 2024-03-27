@@ -1,0 +1,124 @@
+Custom Exception :-
+
+
+@PostMapping("/updateStudent")
+public Student updateStudent(@RequestBody @Valid Student student) {
+	return studentService.addStudent(student);
+}
+
+@Override
+public Student updateStudent(Student student) {
+	// TODO Auto-generated method stub
+Optional<Student> student1 = studentRepository.findById(student.getId());
+	if(student1.isPresent()) {
+		studentRepository.save(student);
+		return student;
+	} else 
+		throw new StudentNotFoundException("Invalid Student by Id : " + student.getId());
+}
+
+
+-------------------------------------------------------------------------------------------------------------
+
+public class StudentNotFoundException extends RuntimeException{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public StudentNotFoundException(String exception) {
+		super(exception);
+	}
+	
+	public StudentNotFoundException(String message,Throwable throwable) {
+		super(message,throwable);
+	}
+	
+	public StudentNotFoundException(Throwable throwable) {
+		super(throwable);
+	}
+}
+
+
+-------------------------------------------------------------------------------------------------------------
+
+@RestControllerAdvice
+public class StudentExceptionHandler {
+	
+	@ExceptionHandler()
+	public ResponseEntity<StudentErrorResponse> handleException(StudentNotFoundException exception) {
+		StudentErrorResponse response = new StudentErrorResponse();
+		response.setStatusCode(HttpStatus.NOT_FOUND.value());
+		response.setMessage(exception.getMessage());
+		response.setTimestamp(System.currentTimeMillis());
+		
+		return new ResponseEntity<StudentErrorResponse>(response,HttpStatus.NOT_FOUND);
+	}
+	
+	@ExceptionHandler()
+	public ResponseEntity<StudentErrorResponse> handleException(Exception exception) {
+		StudentErrorResponse response = new StudentErrorResponse();
+		response.setStatusCode(HttpStatus.BAD_REQUEST.value());
+		response.setMessage(exception.getMessage());
+		response.setTimestamp(System.currentTimeMillis());
+
+		return new ResponseEntity<StudentErrorResponse>(response, HttpStatus.BAD_REQUEST);
+	}
+	
+	@ResponseStatus(HttpStatus.BAD_REQUEST)
+	@ExceptionHandler(MethodArgumentNotValidException.class)
+	public Map<String, String> handleException(MethodArgumentNotValidException exception) {
+		Map<String,String> map = new HashMap<>();
+		exception.getBindingResult().getFieldErrors().forEach(err -> {
+			map.put(err.getField(), err.getDefaultMessage());	
+		});
+		return map;
+	}
+
+}
+
+-------------------------------------------------------------------------------------------------------------
+
+public class StudentErrorResponse {
+	
+	private int statusCode;
+	private String message;
+	private long timestamp;
+	
+	public StudentErrorResponse() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public StudentErrorResponse(int statusCode, String message, long timestamp) {
+		super();
+		this.statusCode = statusCode;
+		this.message = message;
+		this.timestamp = timestamp;
+	}
+
+	public int getStatusCode() {
+		return statusCode;
+	}
+
+	public void setStatusCode(int statusCode) {
+		this.statusCode = statusCode;
+	}
+
+	public String getMessage() {
+		return message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public long getTimestamp() {
+		return timestamp;
+	}
+
+	public void setTimestamp(long timestamp) {
+		this.timestamp = timestamp;
+	}
+}

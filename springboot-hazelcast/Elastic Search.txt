@@ -1,0 +1,35 @@
+Elastic Search :-
+
+Download from below path :-
+
+https://www.elastic.co/guide/en/elasticsearch/reference/7.17/zip-windows.html
+
+After download go to the pth and Need to run the bat file
+
+E:\Apps\Softwares\elasticsearch-7.17.19-windows-x86_64\elasticsearch-7.17.19\bin>elasticsearch.bat
+
+Request :-
+
+http://localhost:9200/
+
+
+Response :-
+
+{
+  "name" : "DESKTOP-RQMBR4J",
+  "cluster_name" : "elasticsearch",
+  "cluster_uuid" : "m1Mn1Rn3TBCk157EZVUS7w",
+  "version" : {
+    "number" : "7.17.19",
+    "build_flavor" : "default",
+    "build_type" : "zip",
+    "build_hash" : "92f290e9537478f85ff3fe3ab39945c1a49a6c1a",
+    "build_date" : "2024-03-21T14:34:38.216751500Z",
+    "build_snapshot" : false,
+    "lucene_version" : "8.11.3",
+    "minimum_wire_compatibility_version" : "6.8.0",
+    "minimum_index_compatibility_version" : "6.0.0-beta1"
+  },
+  "tagline" : "You Know, for Search"
+}
+

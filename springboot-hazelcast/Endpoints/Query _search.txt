@@ -1,0 +1,51 @@
+
+Request :-
+
+http://localhost:9200/elasticsearchproduct/_search
+
+
+{
+	"query" : {
+		"match" : {
+			"id" : 2
+		}
+	}
+}
+
+
+Response :-
+
+
+{
+	"took": 235,
+	"timed_out": false,
+	"_shards": {
+		"total": 1,
+		"successful": 1,
+		"skipped": 0,
+		"failed": 0
+	},
+	"hits": {
+		"total": {
+			"value": 1,
+			"relation": "eq"
+		},
+		"max_score": 1.0,
+		"hits": [
+			{
+				"_index": "elasticsearchproduct",
+				"_type": "_doc",
+				"_id": "2",
+				"_score": 1.0,
+				"_source": {
+					"_class": "com.example.springboothazelcast.model.ElasticSearchProduct",
+					"id": 2,
+					"name": "Mobile",
+					"description": "Good Mobile",
+					"qty": 2,
+					"price": 2000.0
+				}
+			}
+		]
+	}
+}
