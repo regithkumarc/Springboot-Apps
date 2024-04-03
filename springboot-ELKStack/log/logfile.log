@@ -1,0 +1,30 @@
+2024-04-03 13:22:46,746 INFO c.e.s.c.UserController [http-nio-8092-exec-8] Info level log message
+2024-04-03 13:22:53,140 DEBUG c.e.s.c.UserController [http-nio-8092-exec-8] Debug level log message
+2024-04-03 13:22:53,208 ERROR c.e.s.c.UserController [http-nio-8092-exec-8] Error level log message
+2024-04-03 13:22:58,781 INFO c.e.s.c.UserController [http-nio-8092-exec-8] user found : UserData(id=1, name=regith)
+2024-04-03 13:23:00,780 INFO c.e.s.c.UserController [http-nio-8092-exec-10] Info level log message
+2024-04-03 13:23:00,780 DEBUG c.e.s.c.UserController [http-nio-8092-exec-10] Debug level log message
+2024-04-03 13:23:00,802 ERROR c.e.s.c.UserController [http-nio-8092-exec-10] Error level log message
+2024-04-03 13:23:00,879 INFO c.e.s.c.UserController [http-nio-8092-exec-10] user found : UserData(id=2, name=vijith)
+2024-04-03 13:42:34,956 INFO c.e.s.c.UserController [http-nio-8092-exec-3] Info level log message
+2024-04-03 13:42:35,412 DEBUG c.e.s.c.UserController [http-nio-8092-exec-3] Debug level log message
+2024-04-03 13:42:35,416 ERROR c.e.s.c.UserController [http-nio-8092-exec-3] Error level log message
+2024-04-03 13:42:35,517 INFO c.e.s.c.UserController [http-nio-8092-exec-3] user found : UserData(id=2, name=vijith)
+2024-04-03 14:02:03,911 INFO c.e.s.c.UserController [http-nio-8092-exec-7] Info level log message
+2024-04-03 14:02:03,911 DEBUG c.e.s.c.UserController [http-nio-8092-exec-7] Debug level log message
+2024-04-03 14:02:03,912 ERROR c.e.s.c.UserController [http-nio-8092-exec-7] Error level log message
+2024-04-03 14:02:03,913 INFO c.e.s.c.UserController [http-nio-8092-exec-7] user found : UserData(id=2, name=vijith)
+2024-04-03 14:02:31,333 INFO c.e.s.c.UserController [http-nio-8092-exec-8] Info level log message
+2024-04-03 14:02:31,334 DEBUG c.e.s.c.UserController [http-nio-8092-exec-8] Debug level log message
+2024-04-03 14:02:31,334 ERROR c.e.s.c.UserController [http-nio-8092-exec-8] Error level log message
+2024-04-03 14:02:31,335 INFO c.e.s.c.UserController [http-nio-8092-exec-8] user found : UserData(id=1, name=regith)
+2024-04-03 14:02:54,172 INFO c.e.s.c.UserController [http-nio-8092-exec-10] Info level log message
+2024-04-03 14:02:54,173 DEBUG c.e.s.c.UserController [http-nio-8092-exec-10] Debug level log message
+2024-04-03 14:02:54,174 ERROR c.e.s.c.UserController [http-nio-8092-exec-10] Error level log message
+2024-04-03 14:02:54,174 INFO c.e.s.c.UserController [http-nio-8092-exec-10] user found : UserData(id=1, name=regith)
+2024-04-03 14:03:01,657 INFO c.e.s.c.UserController [http-nio-8092-exec-2] Info level log message
+2024-04-03 14:03:03,884 DEBUG c.e.s.c.UserController [http-nio-8092-exec-2] Debug level log message
+2024-04-03 14:03:03,885 ERROR c.e.s.c.UserController [http-nio-8092-exec-2] Error level log message
+2024-04-03 14:03:03,885 INFO c.e.s.c.UserController [http-nio-8092-exec-2] user found : UserData(id=1, name=regith)
+2024-04-03 15:29:41,436 INFO o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin [RMI TCP Connection(704)-127.0.0.1] Application shutdown requested.
+2024-04-03 15:29:46,102 INFO o.a.j.l.DirectJDKLog [RMI TCP Connection(704)-127.0.0.1] Stopping ProtocolHandler ["http-nio-8092"]

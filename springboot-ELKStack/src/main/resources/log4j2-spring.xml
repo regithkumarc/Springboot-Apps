@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+	<Properties>
+		<Property name="LOG_FILE_PATH">E:/Regith/Apps/Apps/Springboot/springboot-ELKStack/log</Property>
+		<Property name="CONSOLE_LOG_PATTERN">%d{yyyy-MM-dd HH:mm:ss} - %-5level
+			- %logger{36} - %msg%n</Property>
+	</Properties>
+	<Appenders>
+		<Console name="STDOUT" target="SYSTEM_OUT">
+			<PatternLayout>
+                <pattern>%d %p %C{1.} [%t] %m%n</pattern>
+            </PatternLayout>
+		</Console>
+		<RollingFile name="RollingFile" fileName="${LOG_FILE_PATH}/logfile.log"
+			 filePattern="${LOG_FILE_PATH}/logfile-%d{dd-MMMM-yyyy}-%i.log.gz">
+			<PatternLayout>
+                <pattern>%d %p %C{1.} [%t] %m%n</pattern>
+            </PatternLayout>
+			<Policies>
+				<TimeBasedTriggeringPolicy />
+				<SizeBasedTriggeringPolicy size="1 GB" />
+			</Policies>
+		</RollingFile>
+	</Appenders>
+	<SpringProfile name="dev">
+		<Loggers>
+			<Logger name="com.example.springbootelkstack" level="debug" additivity="false">
+				<AppenderRef ref="RollingFile" />
+				<AppenderRef ref="STDOUT" />
+
+			</Logger>
+			<Root level="info">
+				<AppenderRef ref="STDOUT" />
+				<AppenderRef ref="RollingFile" />
+			</Root>
+		</Loggers>
+	</SpringProfile>
+	<SpringProfile name="prod">
+		<Loggers>
+			<Logger name="com.example.springbootelkstack" level="info" additivity="false">
+				<AppenderRef ref="RollingFile" />
+				<AppenderRef ref="STDOUT" />
+			</Logger>
+			<Root level="info">
+				<AppenderRef ref="STDOUT" />
+				<AppenderRef ref="RollingFile" />
+			</Root>
+		</Loggers>
+	</SpringProfile>
+</Configuration>

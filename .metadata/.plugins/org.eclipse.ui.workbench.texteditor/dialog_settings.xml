@@ -6,8 +6,9 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="deleteStudentById"/>
+		<item key="selection" value=""/>
 		<list key="findhistory">
+			<item value="date"/>
 			<item value="deleteStudentById"/>
 			<item value="deleteMessage"/>
 			<item value="debug"/>
